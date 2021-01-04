@@ -1,18 +1,32 @@
-var map = L.map('map').fitWorld();
+var mapOptions = {
+    center: [54.68673, 25.29754],
+    zoom: 10,
+    zoomControl: false
+};
+
 var map_base = L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 });
 
+var zoomOptions = {
+    position: 'bottomright'
+};
+
+var locateOptions = {
+    flyTo: true,
+    clickBehavior: {inView: 'setView', outOfView: 'setView', inViewNotFollowing: 'inView'},
+    position: 'bottomright'
+}
+
+var map = L.map('map', mapOptions).fitWorld();
 map_base.addTo(map);
 
-// create control and add to map
-var lc = L.control.locate({
-    flyTo: true
-}).addTo(map);
-
-// request location update and set location
+var scale = L.control.scale().addTo(map);
+var zoom = L.control.zoom(zoomOptions).addTo(map);
+var lc = L.control.locate(locateOptions).addTo(map);
 lc.start();
+
 
 var url = 'https://e7296787-046b-4f04-b201-e452f79c4204.usrfiles.com/ugd/e72967_06b7b5e173054c6eb8c19683edd8e879.gpx'; // URL to your GPX file
 new L.GPX(url, {
