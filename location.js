@@ -5,10 +5,10 @@ var map_base = L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png',
 });
 
 map_base.addTo(map);
-map.locate({
-  setView: true,
-  maxZoom: 19
-});
+// map.locate({
+//   setView: true,
+//   maxZoom: 19
+// });
 
 L.control.locate({
   flyTo: true
@@ -30,46 +30,46 @@ new L.GPX(url, {
   map.fitBounds(e.target.getBounds());
 }).addTo(map);
 
-var navIcon = L.icon({
-  iconUrl: 'https://static.wixstatic.com/media/e72967_2f70cc846d30428aa7fd389d0dc0f8f4~mv2.png',
-  iconSize: [26, 36],
-  iconAnchor: [13, 18],
-  popupAnchor: [0, 0],
-  shadowUrl: '',
-  shadowSize: [0, 0],
-  shadowAnchor: [0, 0]
-});
+// var navIcon = L.icon({
+//   iconUrl: 'https://static.wixstatic.com/media/e72967_2f70cc846d30428aa7fd389d0dc0f8f4~mv2.png',
+//   iconSize: [26, 36],
+//   iconAnchor: [13, 18],
+//   popupAnchor: [0, 0],
+//   shadowUrl: '',
+//   shadowSize: [0, 0],
+//   shadowAnchor: [0, 0]
+// });
 
 // placeholders for the L.marker and L.circle representing user's current position and accuracy    
-var current_position, current_accuracy;
+// var current_position, current_accuracy;
 
-function onLocationFound(e) {
-  // if position defined, then remove the existing position marker and accuracy circle from the map
-  if (current_position) {
-    map.removeLayer(current_position);
-    //map.removeLayer(current_accuracy);
-  }
+// function onLocationFound(e) {
+//   // if position defined, then remove the existing position marker and accuracy circle from the map
+//   if (current_position) {
+//     map.removeLayer(current_position);
+//     //map.removeLayer(current_accuracy);
+//   }
   
-  //var radius = e.accuracy / 2;
+//   //var radius = e.accuracy / 2;
   
-  current_position = L.marker(e.latlng, {icon: navIcon}).addTo(map);
-  //current_accuracy = L.circle(e.latlng, radius).addTo(map);
-}
+//   current_position = L.marker(e.latlng, {icon: navIcon}).addTo(map);
+//   //current_accuracy = L.circle(e.latlng, radius).addTo(map);
+// }
 
-// wrap map.locate in a function    
-function locate() {
-  map.locate({
-    setView: true,
-    maxZoom: 19
-  });
-}
+// // wrap map.locate in a function    
+// function locate() {
+//   map.locate({
+//     setView: true,
+//     maxZoom: 19
+//   });
+// }
 
-// call locate every 3 seconds... forever
-//setInterval(locate, 3000);
+// // call locate every 3 seconds... forever
+// //setInterval(locate, 3000);
 
-function onLocationError(e) {
-  alert(e.message);
-}
+// function onLocationError(e) {
+//   alert(e.message);
+// }
 
-map.on('locationfound', onLocationFound);
-map.on('locationerror', onLocationError);
+// map.on('locationfound', onLocationFound);
+// map.on('locationerror', onLocationError);
