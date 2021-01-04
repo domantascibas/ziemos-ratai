@@ -30,11 +30,11 @@ body {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.notfound {
+.notfound, .live-tracks {
   max-width: 520px;
   width: 100%;
   line-height: 1.4;
@@ -96,6 +96,32 @@ body {
 .notfound a:hover {
   color: #ff6300;
   background: #211b19;
+}
+
+.live-tracks ul {
+  list-style-image: none;
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+}
+
+.live-tracks a {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  color: #211b19;
+  text-transform: uppercase;
+  padding: 13px 23px;
+  font-size: 18px;
+  background: none;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.live-tracks a:hover {
+  color: #ff6300;
+  background: none;
 }
 
 @media only screen and (max-width: 767px) {
