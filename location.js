@@ -5,14 +5,14 @@ var map_base = L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png',
 });
 
 map_base.addTo(map);
-// map.locate({
-//   setView: true,
-//   maxZoom: 19
-// });
 
-L.control.locate({
-  flyTo: true
+// create control and add to map
+var lc = L.control.locate({
+    flyTo: true
 }).addTo(map);
+
+// request location update and set location
+lc.start();
 
 var url = 'https://e7296787-046b-4f04-b201-e452f79c4204.usrfiles.com/ugd/e72967_16bdaaa7446c4edca1076e0a2b49b770.gpx'; // URL to your GPX file
 new L.GPX(url, {
