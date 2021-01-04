@@ -14,7 +14,7 @@ var lc = L.control.locate({
 // request location update and set location
 lc.start();
 
-var url = 'https://e7296787-046b-4f04-b201-e452f79c4204.usrfiles.com/ugd/e72967_16bdaaa7446c4edca1076e0a2b49b770.gpx'; // URL to your GPX file
+var url = 'https://e7296787-046b-4f04-b201-e452f79c4204.usrfiles.com/ugd/e72967_06b7b5e173054c6eb8c19683edd8e879.gpx'; // URL to your GPX file
 new L.GPX(url, {
   async: true,
   marker_options: {
