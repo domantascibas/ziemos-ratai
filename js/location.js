@@ -18,7 +18,8 @@ var zoomOptions = {
 var locateOptions = {
     flyTo: true,
     clickBehavior: {inView: 'setView', outOfView: 'setView', inViewNotFollowing: 'inView'},
-    position: 'bottomright'
+    position: 'bottomright',
+    showPopup: false
 }
 
 map_base.addTo(map);
