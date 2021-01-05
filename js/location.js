@@ -1,32 +1,36 @@
-var mapOptions = {
+var mOpts = {
     center: [54.68673, 25.29754],
-    zoom: 10,
+    zoom: 14,
     zoomControl: false
 };
 
-var map = L.map('map', mapOptions).fitWorld();
-
 var map_base = L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
-    maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-});
-
-var zoomOptions = {
+    maxZoom: 18
+  });
+  
+  var map = L.map('map', mOpts).fitWorld();
+  
+  var zOpts = {
     position: 'bottomright'
-};
-
-var locateOptions = {
+  };
+  
+  var lOpts = {
     flyTo: true,
     clickBehavior: {inView: 'setView', outOfView: 'setView', inViewNotFollowing: 'inView'},
     position: 'bottomright',
-    showPopup: false
+    showPopup: false,
+    initialZoomLevel: 16,
+    locateOptions: {
+      maxZoom: 16
+    }
 }
 
 map_base.addTo(map);
 
 var scale = L.control.scale().addTo(map);
-var zoom = L.control.zoom(zoomOptions).addTo(map);
-var lc = L.control.locate(locateOptions).addTo(map);
+var zoom = L.control.zoom(zOpts).addTo(map);
+var lc = L.control.locate(lOpts).addTo(map);
 lc.start();
 
 iconParking = L.divIcon({
