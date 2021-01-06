@@ -28,10 +28,18 @@ body {
 #home .home {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+#home .main-logo {
+  position: absolute;
+  width: 80px;
+  bottom: 30px;
+  right: 0%;
+  margin-right: 40px;
 }
 
 .home, .live-tracks {
