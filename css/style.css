@@ -20,12 +20,12 @@ body {
   margin: 0;
 }
 
-#notfound {
+#home {
   position: relative;
   height: 100vh;
 }
 
-#notfound .notfound {
+#home .home {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -34,21 +34,21 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.notfound, .live-tracks {
-  max-width: 520px;
+.home, .live-tracks {
+  max-width: 220px;
   width: 100%;
   line-height: 1.4;
   text-align: center;
 }
 
-.notfound .notfound-404 {
+.home .home-main {
   position: relative;
   height: 200px;
   margin: 0px auto 20px;
   z-index: -1;
 }
 
-.notfound .notfound-404 h1 {
+.home .home-main h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 236px;
   font-weight: 200;
@@ -63,7 +63,7 @@ body {
           transform: translate(-50%, -50%);
 }
 
-.notfound .notfound-404 h2 {
+.home .home-main h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 400;
@@ -79,7 +79,7 @@ body {
   right: 0;
 }
 
-.notfound a {
+.home a {
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
   font-weight: 700;
@@ -93,7 +93,7 @@ body {
   transition: 0.2s all;
 }
 
-.notfound a:hover {
+.home a:hover {
   color: #ff6300;
   background: #211b19;
 }
@@ -125,23 +125,23 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-  .notfound .notfound-404 h1 {
+  .home .home-main h1 {
     font-size: 148px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .notfound .notfound-404 {
+  .home .home-main {
     height: 148px;
     margin: 0px auto 10px;
   }
-  .notfound .notfound-404 h1 {
+  .home .home-main h1 {
     font-size: 86px;
   }
-  .notfound .notfound-404 h2 {
+  .home .home-main h2 {
     font-size: 16px;
   }
-  .notfound a {
+  .home a {
     padding: 7px 15px;
     font-size: 14px;
   }
