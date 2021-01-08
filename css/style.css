@@ -132,6 +132,16 @@ body {
   background: none;
 }
 
+.live-tracks a.disabled {
+  color: #b5b5b5;
+  background: none;
+}
+
+.live-tracks a.disabled:hover {
+  color: #b5b5b5;
+  background: none;
+}
+
 @media only screen and (max-width: 767px) {
   .home .home-main h1 {
     font-size: 148px;
